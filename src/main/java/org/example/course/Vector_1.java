@@ -1,6 +1,8 @@
 package org.example.course;
 
-public class Vector {
+import java.util.Arrays;
+
+public class Vector_1 {
     public static void main (String[] args) {
 
         int [] vector = new int[10];
@@ -16,5 +18,7 @@ public class Vector {
         for (int i=0; i<vector.length;i++) {
             System.out.println(vector[i]);
         }
+        // Imprimir os elementos do vetor
+       // System.out.println(Arrays.toString(vector));
     }
 }
