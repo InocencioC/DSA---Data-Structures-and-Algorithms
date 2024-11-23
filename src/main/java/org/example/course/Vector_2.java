@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Vector_2 {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         String[] estados = new String[10];
         estados[0] = "LD";
         estados[1] = "CD";
@@ -18,19 +18,30 @@ public class Vector_2 {
         estados[8] = "CN";
         estados[9] = "HA";
 
-        for (int i = 0; i < estados.length ; i++){
-           // System.out.println(estados[i]);
+        for (int i = 0; i < estados.length; i++) {
+            // System.out.println(estados[i]);
         }
         System.out.println(Arrays.toString(estados));
+        System.out.println("Which state do you want to search");
         Scanner leitor = new Scanner(System.in);
         String siglaBusca = leitor.nextLine();
 
-        System.out.println(siglaBusca);
-
         //busca linear
+        boolean founded = false;
+        for (int i = 0; i < estados.length; i++) {
+            String vectorElement = estados[i];
+            if (vectorElement.equals(siglaBusca)) {
+                founded = true;
+                break;
+            }
 
+        }
+        if (founded == true){
+            System.out.println("Founded");
+        }else {
+            System.out.println("Not Founded");
+        }
     }
-
 }
 
 
