@@ -1,12 +1,16 @@
 package org.example.LinkedList;
 
-public class ListaLigada {
+public class ListaLigada<TIPO> {
 
-    private Elemento primeiro;
-    private Elemento ultimo;
+    private Elemento<TIPO> primeiro;
+    private Elemento<TIPO> ultimo;
     private int tamanho;
 
-    public Elemento getPrimeiro() {
+    public ListaLigada() {
+        this.primeiro = null;
+    }
+
+    public Elemento<TIPO> getPrimeiro() {
         return primeiro;
     }
 
@@ -14,7 +18,7 @@ public class ListaLigada {
         this.primeiro = primeiro;
     }
 
-    public Elemento getUltimo() {
+    public Elemento<TIPO> getUltimo() {
         return ultimo;
     }
 
@@ -30,8 +34,8 @@ public class ListaLigada {
         this.tamanho = tamanho;
     }
 
-    public void adicionar(String novoValor) {
-        Elemento novoElemento = new Elemento(novoValor);
+    public void adicionar(TIPO novoValor) {
+        Elemento<TIPO> novoElemento = new Elemento<TIPO>(novoValor);
         if (this.primeiro == null && this.ultimo == null) {
             this.primeiro = novoElemento;
             this.ultimo = novoElemento;
@@ -42,11 +46,11 @@ public class ListaLigada {
         this.tamanho++;
     }
 
-    public void remover(String ValorProcurado) {
-        Elemento anterior = null;
-        Elemento atual = this.primeiro;
+    public void remover(TIPO ValorProcurado) {
+        Elemento<TIPO> anterior = null;
+        Elemento<TIPO> atual = this.primeiro;
         for (int i = 0; i < this.getTamanho(); i++) {
-            if (atual.getValor().equalsIgnoreCase(ValorProcurado)) {
+                if (atual.getValor().equals(ValorProcurado)) {
                 if (this.tamanho == 1) {
                     this.primeiro = null;
                     this.ultimo = null;
