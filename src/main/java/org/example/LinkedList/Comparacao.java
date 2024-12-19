@@ -34,9 +34,11 @@ public static void main(String[] args) {
     System.out.println(tempoFinal - tempoInicial);
 
     tempoInicial = System.currentTimeMillis();
-    for (int i = 0; i < lista.getTamanho(); i++){
-    lista.get(i);
-  }
+    IteratorListaLigada<Integer> iterator = lista.getIterator();
+    while (iterator.temProximo()) {
+        iterator.getProximo();
+    }
+
     tempoFinal = System.currentTimeMillis();
     System.out.println("\n\nTempo de leitura da lista");
     System.out.println(tempoFinal - tempoInicial);
